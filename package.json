@@ -1,0 +1,26 @@
+{
+  "name": "salesloft_app",
+  "version": "1.0.0",
+  "description": "Interview application for salesloft",
+  "main": "app.js",
+  "scripts": {
+    "start": "node server/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kotojo/salesloft_app.git"
+  },
+  "keywords": [],
+  "author": "Bruce Kellerman",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/kotojo/salesloft_app/issues"
+  },
+  "homepage": "https://github.com/kotojo/salesloft_app#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "morgan": "^1.9.0"
+  }
+}
