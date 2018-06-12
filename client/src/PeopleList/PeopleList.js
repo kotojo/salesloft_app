@@ -4,6 +4,11 @@ export default ({ people }) => (
   <table>
     <thead>
       <tr>
+        <th>
+          <h3>My People</h3>
+        </th>
+      </tr>
+      <tr>
         <th>Name</th>
         <th>Email</th>
         <th>Title</th>

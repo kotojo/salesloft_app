@@ -1,0 +1,27 @@
+.error {
+  color: red;
+}
+
+.nav {
+  color: #4f5359;
+  margin: 0 0.5em;
+}
+
+.title {
+  padding-right: 1em;
+  border-right: 1px solid #4f5459;
+}
+
+.creator {
+  padding-left: 1em;
+}
+
+.nav-link {
+  font-weight: bold;
+  text-decoration: none;
+  padding: 1em;
+}
+
+.active {
+  color: #faa529;
+}

@@ -32,6 +32,11 @@ export default ({ emails }) => {
     <table>
       <thead>
         <tr>
+          <th>
+            <h3>Characters by frequency of occurance</h3>
+          </th>
+        </tr>
+        <tr>
           <th>Character</th>
           <th>Count</th>
         </tr>

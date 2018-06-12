@@ -1,0 +1,32 @@
+html,
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+table {
+  margin: auto;
+  font-size: 0.8em;
+  text-align: left;
+}
+
+tbody > tr:nth-child(odd) {
+  background-color: #f5f6f8;
+}
+
+td {
+  min-width: 100px;
+  padding: 1em 1em 1em 0;
+}

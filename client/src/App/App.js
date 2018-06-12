@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, NavLink } from 'react-router-dom';
 import axios from 'axios';
 import PeopleList from '../PeopleList';
 import CharacterFrequency from '../CharacterFrequency';
@@ -30,19 +30,24 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div>
-          <p>Welcome to my salesloft app</p>
-          {error && <p>Sorry, something went wrong getting your available people. Please refresh!</p>}
-          <ul>
-            <li>
-              <Link to="/">People Dashboard</Link>
-            </li>
-            <li>
-              <Link to="/frequency">View email character frequency</Link>
-            </li>
-            <li>
-              <Link to="/duplicates">View possible duplicate people</Link>
-            </li>
-          </ul>
+          <nav className="flex justify-content-between align-items-center nav">
+            <div className="flex align-items-center">
+              <h2 className="title">My Salesloft App</h2>
+              <p className="creator">By Bruce Kellerman</p>
+            </div>
+            <div>
+              <NavLink activeClassName="active" exact className="nav-link" to="/">
+                Dashboard
+              </NavLink>
+              <NavLink activeClassName="active" className="nav-link" to="/frequency">
+                Character Frequency
+              </NavLink>
+              <NavLink activeClassName="active" className="nav-link" to="/duplicates">
+                Duplicate People
+              </NavLink>
+            </div>
+          </nav>
+          {error && <p className="error">Sorry, something went wrong getting your available people. Please refresh!</p>}
           <Switch>
             <Route exact path="/" render={() => <PeopleList people={people} />} />
             <Route

@@ -1,6 +1,7 @@
 import React from 'react';
 import leven from 'leven';
 import { flatMap } from 'lodash';
+import './Duplicates.css';
 
 export const getSimilarEmails = emails => {
   // get every combo of values in array and compare them using the Levenshtein distance algorithm
@@ -19,10 +20,10 @@ export const getSimilarEmails = emails => {
 export default ({ emails }) => {
   const similarEmails = getSimilarEmails(emails);
   return (
-    <div>
-      <h1>Similar Emails</h1>
+    <div className="duplicates">
+      <h3>Similar Emails</h3>
       {similarEmails.length === 0 && <p>No possible duplicate emails founds.</p>}
-      <ul>{similarEmails.map(e => <li key={e.emails}>{e.emails}</li>)}</ul>
+      <ul className="emails">{similarEmails.map(e => <li key={e.emails}>{e.emails}</li>)}</ul>
     </div>
   );
 };
