@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import axios from 'axios';
-import PeopleList from './PeopleList';
-import CharacterFrequency from './CharacterFrequency';
+import PeopleList from '../PeopleList';
+import CharacterFrequency from '../CharacterFrequency';
+import Duplicates from '../Duplicates';
 import './App.css';
 
 class App extends Component {
@@ -38,6 +39,9 @@ class App extends Component {
             <li>
               <Link to="/frequency">View email character frequency</Link>
             </li>
+            <li>
+              <Link to="/duplicates">View possible duplicate people</Link>
+            </li>
           </ul>
           <Switch>
             <Route exact path="/" render={() => <PeopleList people={people} />} />
@@ -46,6 +50,7 @@ class App extends Component {
               path="/frequency"
               render={() => <CharacterFrequency emails={people.map(p => p.email_address)} />}
             />
+            <Route exact path="/duplicates" render={() => <Duplicates emails={people.map(p => p.email_address)} />} />
           </Switch>
         </div>
       </BrowserRouter>
