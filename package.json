@@ -7,7 +7,9 @@
     "start": "concurrently \"npm run server\" \"npm run client\"",
     "server": "node server/app.js",
     "client": "node start-client.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server-test": "jest ./server",
+    "client-test": "node client-test.js",
+    "test-all": "concurrently \"npm run server-test\" \"npm run client-test\""
   },
   "repository": {
     "type": "git",
@@ -23,9 +25,12 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
-    "morgan": "^1.9.0"
+    "morgan": "^1.9.0",
+    "request": "^2.87.0",
+    "request-promise-native": "^1.0.5"
   },
   "devDependencies": {
-    "concurrently": "^3.5.1"
+    "concurrently": "^3.5.1",
+    "jest": "^23.1.0"
   }
 }
