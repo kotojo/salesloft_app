@@ -1,19 +1,40 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import axios from 'axios';
+import PeopleList from './PeopleList';
 import './App.css';
 
 class App extends Component {
+  state = {
+    error: '',
+    people: [],
+  };
+
+  async componentDidMount() {
+    try {
+      const response = await axios.get('/api/people');
+      this.setState({
+        people: response.data,
+      });
+    } catch (e) {
+      this.setState({
+        error: e.message,
+      });
+    }
+  }
+
   render() {
+    const { people, error } = this.state;
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <BrowserRouter>
+        <div>
+          <p>Welcome to my salesloft app</p>
+          {error && <p>Sorry, something went wrong getting your available people. Please refresh!</p>}
+          <Switch>
+            <Route exact path="/" render={() => <PeopleList people={people} />} />
+          </Switch>
+        </div>
+      </BrowserRouter>
     );
   }
 }

@@ -11,7 +11,8 @@ class PeopleService {
       },
     };
     try {
-      return await request(options);
+      const response = await request(options);
+      return response.data;
     } catch (e) {
       // real logging would go here
       console.error(e);
