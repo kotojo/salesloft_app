@@ -4,7 +4,9 @@
   "description": "Interview application for salesloft",
   "main": "app.js",
   "scripts": {
-    "start": "node server/app.js",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "node server/app.js",
+    "client": "node start-client.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,5 +24,8 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "morgan": "^1.9.0"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.1"
   }
 }
